@@ -1,0 +1,257 @@
+    /* General Page Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        color: #5a6274;
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        padding: 1.5rem 0;
+        background-color: #e8f4f8;
+        color: #5a6274;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    /* Scene Section */
+    .scene {
+        flex: 1;
+        position: relative;
+        background-color: #f0f7fa;
+        border-radius: 12px;
+        margin: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        min-height: 550px;
+    }
+
+    /* Ball Styling */
+    .ball {
+        width: 30px;
+        height: 30px;
+        background-color: #7eb8da;
+        border-radius: 50%;
+        position: absolute;
+        left: 20px; /* Start from left */
+        bottom: 50px; /* Above ground */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Stickman Container */
+    .stickman {
+        position: absolute;
+        left: 50%;
+        bottom: 25px; /* Adjust position at the bottom of the scene */
+        transform: translateX(-50%); /* Center the stickman horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stickman Parts */
+    .head {
+        width: 30px;
+        height: 30px;
+        background-color: #5a6274;
+        border-radius: 50%;
+    }
+
+    .body {
+        width: 6px;
+        height: 50px;
+        background-color: #5a6274;
+        margin-left: 12px;
+    }
+
+    .left-arm, .right-arm {
+        width: 40px;
+        height: 5px;
+        background-color: #5a6274;
+        position: absolute;
+        top: 40px;
+    }
+
+    .left-arm {
+        left: -15px;
+        transform: rotate(30deg);
+    }
+
+    .right-arm {
+        right: -15px;
+        transform: rotate(-30deg);
+    }
+
+    .left-leg, .right-leg {
+        width: 5px;
+        height: 40px;
+        background-color: #5a6274;
+        position: absolute;
+        top: 80px;
+    }
+
+    .left-leg {
+        left: 5px;
+        transform: rotate(15deg);
+    }
+
+    .right-leg {
+        right: 5px;
+        transform: rotate(-15deg);
+    }
+
+    /* Broken parts styling */
+    #broken-parts {
+        position: absolute;
+        left: 50%;
+        bottom: 25px;
+    }
+
+    #broken-parts .part {
+        position: absolute;
+        background-color: #5a6274;
+    }
+
+    #broken-parts .head {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    /* Controls Section */
+    .controls {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: white;
+        border-radius: 12px;
+        margin: 0 1.5rem 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    label {
+        font-size: 0.9rem;
+        color: #7a8599;
+        margin-right: 0.5rem;
+    }
+
+    input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #e1e5eb;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #5a6274;
+        background-color: #f8f9fa;
+        width: 100px;
+        transition: all 0.2s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #7eb8da;
+        box-shadow: 0 0 0 3px rgba(126, 184, 218, 0.2);
+    }
+
+    button {
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    #startBtn {
+        background-color: #7eb8da;
+        color: white;
+    }
+
+    #startBtn:hover {
+        background-color: #6aa5c7;
+    }
+
+    #resetBtn {
+        background-color: #f0f7fa;
+        color: #5a6274;
+    }
+
+    #resetBtn:hover {
+        background-color: #e1e9ed;
+    }
+
+    .explanation {
+        padding: 1.5rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #7eb8da;
+    }
+
+    .explanation h2 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        color: #5a6274;
+    }
+
+    .explanation p {
+        font-size: 0.95rem;
+        color: #7a8599;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        .controls {
+            flex-direction: row;
+        }
+        
+        .inputs {
+            flex: 1;
+        }
+        
+        .explanation {
+            flex: 1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .inputs {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        input {
+            width: 100%;
+        }
+        
+        button {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+    }
